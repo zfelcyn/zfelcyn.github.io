@@ -132,6 +132,52 @@ footer {
     margin-right: 10px;
 }
 
+/* This is styling for the image slider */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust based on your preference */
+}
+
+.slides img {
+    width: 100%;
+    display: none;
+}
+
+.slides img:first-child {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .contact-item {
@@ -139,6 +185,8 @@ footer {
     }
 }
 
+
+/* Below is all for the terminal element of my website */
 
 /* Style for the terminal modal */
 .modal {
