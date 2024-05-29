@@ -67,14 +67,15 @@ section {
 }
 
 .repo h3 {
-    margin: 0;
+    margin: 30;
+
 }
 
 .repo a {
     text-decoration: none;
     color: #333;
     display: block;
-    margin-top: 10px;
+   
 }
 
 .repo a:hover {
