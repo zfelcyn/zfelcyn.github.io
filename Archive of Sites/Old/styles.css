@@ -1,0 +1,322 @@
+/* Reset and Global Styles */
+body {
+    font-family: "San Francisco", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Style for the header text */
+.name {
+    font-size: 20px; /* Smaller font size */
+    margin: 0;
+    padding-left: 20px; /* Add left padding */
+}
+
+
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Section Styles */
+section {
+    padding: 40px;
+}
+
+/* Repository (Portfolio) Styles */
+.repo {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.repo h3 {
+    margin: 30;
+
+}
+
+.repo a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+   
+}
+
+.repo a:hover {
+    text-decoration: underline;
+}
+
+/* Profile Image Styles */
+.profile-image {
+    max-width: 17%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Contact Me Section Styles */
+#contact {
+    padding: 40px;
+}
+
+#contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.contact-icon {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* This is styling for the image slider */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust based on your preference */
+}
+
+.slides img {
+    width: 100%;
+    display: none;
+}
+
+.slides img:first-child {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-item {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Below is all for the terminal element of my website */
+
+/* Style for the terminal modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+}
+
+/* Style for the terminal modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+}
+
+.modal-content {
+    background-color: #000; /* Black background */
+    color: #00FF00; /* Green text */
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    width: 19%; /* Increase the width by 30% */
+}
+
+
+/* Style for the terminal body */
+.terminal-body {
+    background-color: #000; /* Black background for the body */
+    padding: 10px;
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the terminal window horizontally */
+    height: 200px; /* Adjust the height as needed */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Style for the terminal input */
+#terminal-input {
+    background-color: #000; /* Black background for the input field */
+    color: #00FF00; /* Green text for the input field */
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-family: monospace; /* Use a monospace font for the input field */
+    font-size: 14px; /* Adjust the font size as needed */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+/* Style for the terminal header */
+.terminal-header {
+    background-color: #111; /* Dark gray background for the header */
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center; /* Center the text */
+    font-weight: bold;
+}
+
+
+/* Style for the center button container */
+.center-button {
+    flex-grow: 1; /* Expand to take available space */
+    text-align: center;
+}
+
+/* Style for the terminal button */
+#terminal-button {
+    background-color: #333; /* Dark gray background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 170px; /* Add margin to the right */
+}
+
+#terminal-button:hover {
+    background-color: #00FF00; /* Green background on hover */
+}
+
+/* Style for the "About Me" section */
+#about {
+    background-color: #f7f7f7; /* Light gray background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#about h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Dark gray text */
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #666; /* Slightly lighter gray text */
+}
+
+/* Add a subtle border for separation */
+#about {
+    border: 1px solid #ddd;
+}
+
+/* Add padding to the inner elements for readability */
+#about h2,
+#about p {
+    padding: 10px;
+}
