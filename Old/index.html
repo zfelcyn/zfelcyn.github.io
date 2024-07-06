@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="icon" href="images/icon.png" type="image/png" />
+
+    <title>Zack Felcyn - Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <div class="name">Zack Felcyn</div>
+      <button id="terminal-button">Terminal</button>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="references/resume.pdf" target="_blank">Resume</a></li>
+          <!-- Updated "Resume" link -->
+        </ul>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Welcome to my portfolio website! I'm currently studying computer science
+        at Washington State University.
+      </p>
+      <img src="images/profile.jpg" alt="Profile Image" class="profile-image" />
+    </section>
+
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="repo">
+        <h3>Node Yak</h3>
+        <!-- This is for image-slider of screen shots-->
+        <div class="slider">
+          <div class="slides">
+            <img
+              src="images/nodeYak/login.png"
+              width="500"
+              alt="Login Screen"
+            />
+            <img
+              src="images/nodeYak/chatroom.png"
+              width="500"
+              alt="Chatroom Screen"
+            />
+          </div>
+          <!-- Navigation arrows -->
+          <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+          <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+        <script src="js/slider.js"></script>
+        <p>
+          Helped colaborate on a location proximity chat social media
+          application, designed location services, and frontEnd.
+        </p>
+        <a href="https://github.com/zfelcyn/Yik-Yak-Clone" target="_blank"
+          >View on GitHub</a
+        >
+      </div>
+
+      <div class="repo">
+        <h3>Project 2</h3>
+        <p>Description of Project 2.</p>
+        <a href="https://github.com/yourusername/project2" target="_blank"
+          >View on GitHub</a
+        >
+      </div>
+      <!-- Add more repo items as needed -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <ul class="contact-list">
+        <li class="contact-item">
+          <a class="contact-link" href="mailto:zachary.felcyn@wsu.edu">
+            <i class="far fa-envelope contact-icon"></i> Email
+          </a>
+        </li>
+        <li class="contact-item">
+          <a
+            class="contact-link"
+            href="https://www.linkedin.com/in/zachary-felcyn-576292235/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin contact-icon"></i> LinkedIn Profile
+          </a>
+        </li>
+        <li class="contact-item">
+          <a
+            class="contact-link"
+            href="https://github.com/zfelcyn"
+            target="_blank"
+          >
+            <i class="fab fa-github contact-icon"></i> GitHub Profile
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Zachary S. Felcyn. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Footer as before -->
+
+    <!-- Modal for Terminal -->
+    <div id="terminal-modal" class="modal">
+      <div class="modal-content">
+        <div class="terminal">
+          <div class="terminal-header">Linux Terminal</div>
+          <div class="terminal-body" id="terminal-output">
+            <!-- Terminal output will be displayed here -->
+          </div>
+          <input
+            id="terminal-input"
+            type="text"
+            placeholder="Enter a command and press Enter"
+          />
+        </div>
+        <span class="close">&times;</span>
+      </div>
+    </div>
+
+    <!-- JavaScript should be placed at the end of the body -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
