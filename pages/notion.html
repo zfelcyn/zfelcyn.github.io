@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notion Links</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: linear-gradient(135deg, black, #9333ea, white);
+        background-size: 200% 200%;
+        animation: gradientMove 6s infinite ease-in-out;
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-white text-black">
+  <body class="text-black">
     <div class="min-h-screen flex flex-col items-center justify-center">
       <h1 class="text-4xl font-bold mb-8">My Notion Pages</h1>
       <div class="bg-gray-100 p-6 rounded-lg shadow-md w-3/4 max-w-xl">
