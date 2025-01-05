@@ -5,107 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="references/favicon.ico" type="image/x-icon" />
     <title>Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      body,
-      html {
-        height: 100%;
-        margin: 0;
-        font-family: Arial, sans-serif;
-        overflow: hidden; /* Prevents scrolling in both directions */
-        height: 100%; /* Optional: Fits the entire viewport to the screen */
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
-      .bg {
-        background-image: url("mountain.jpeg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        filter: blur(8px);
-        -webkit-filter: blur(8px);
-        height: 100%;
-        background-attachment: fixed;
-      }
-      .content {
-        background-color: rgb(0, 0, 0); /* Fallback color */
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.4
-        ); /* Black background with opacity */
-        color: white;
-        font-weight: bold;
-        border: 3px solid #f1f1f1;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        width: 80%;
-        padding: 20px;
-        text-align: center;
-      }
-      .profile-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #fff;
-        margin-bottom: 20px;
+
+      body {
+        background: linear-gradient(90deg, black, white);
+        background-size: 200% 200%;
+        animation: gradientShift 6s infinite ease-in-out;
+        font-family: "Arial", sans-serif;
       }
     </style>
   </head>
-  <body>
-    <div class="bg"></div>
-
-    <div class="content container">
-      <img src="profile.jpg" alt="Profile Photo" class="profile-image" />
-      <h1>Zachary Felcyn</h1>
-      <p>Computer Science at Washington State University</p>
-      <div>
+  <body
+    class="text-white flex flex-col items-center justify-center min-h-screen"
+  >
+    <div
+      class="container text-center p-6 bg-opacity-60 bg-gray-900 rounded-lg shadow-xl"
+    >
+      <img
+        src="profile.jpg"
+        alt="Profile Photo"
+        class="w-40 h-40 rounded-full object-cover mx-auto border-4 border-white mb-4"
+      />
+      <h1 class="text-4xl font-bold mb-2">Zachary Felcyn</h1>
+      <p class="text-lg mb-6">
+        Computer Science at Washington State University
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
         <a
           href="https://www.linkedin.com/in/zachary-felcyn-576292235/"
-          class="btn btn-outline-light btn-lg m-2"
+          class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md"
           target="_blank"
           >LinkedIn</a
         >
         <a
           href="https://github.com/zfelcyn"
-          class="btn btn-outline-light btn-lg m-2"
+          class="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg shadow-md"
           target="_blank"
           >GitHub</a
         >
         <a
           href="pages/project.html"
-          class="btn btn-outline-light btn-lg m-2"
+          class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg shadow-md"
           target="_blank"
           >Projects</a
         >
         <a
           href="pages/notion.html"
-          class="btn btn-outline-light btn-lg m-2"
+          class="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-lg shadow-md"
           target="_blank"
           >Notion</a
         >
         <a
           href="mailto:zackfelcyn@icloud.com"
-          class="btn btn-outline-light btn-lg m-2"
+          class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md"
           >Email Me</a
         >
         <a
           href="references/resume.pdf"
-          class="btn btn-outline-light btn-lg m-2"
+          class="bg-yellow-500 hover:bg-yellow-600 text-black py-2 px-4 rounded-lg shadow-md"
           target="_blank"
           >Resume</a
         >
       </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <footer class="mt-8 text-gray-300">
+      <p>&copy; 2025 Zachary Felcyn. All rights reserved.</p>
+    </footer>
   </body>
 </html>
