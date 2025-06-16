@@ -3,85 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="references/favicon.ico" type="image/x-icon" />
-    <title>Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @keyframes gradientShift {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      body {
-        background: linear-gradient(90deg, black, white);
-        background-size: 200% 200%;
-        animation: gradientShift 6s infinite ease-in-out;
-        font-family: "Arial", sans-serif;
-      }
-    </style>
+    <title>Zachary Felcyn</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="references/favicon.ico" />
   </head>
-  <body
-    class="text-white flex flex-col items-center justify-center min-h-screen"
-  >
-    <div
-      class="container text-center p-6 bg-opacity-60 bg-gray-900 rounded-lg shadow-xl"
-    >
-      <img
-        src="profile.jpg"
-        alt="Profile Photo"
-        class="w-40 h-40 rounded-full object-cover mx-auto border-4 border-white mb-4"
-      />
-      <h1 class="text-4xl font-bold mb-2">Zachary Felcyn</h1>
-      <p class="text-lg mb-6">
-        Computer Science at Washington State University
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href="https://www.linkedin.com/in/zachary-felcyn-576292235/"
-          class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md"
-          target="_blank"
-          >LinkedIn</a
-        >
-        <a
-          href="https://github.com/zfelcyn"
-          class="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg shadow-md"
-          target="_blank"
-          >GitHub</a
-        >
-        <a
-          href="pages/project.html"
-          class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg shadow-md"
-          target="_blank"
-          >Projects</a
-        >
-        <a
-          href="pages/notion.html"
-          class="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-lg shadow-md"
-          target="_blank"
-          >Notion</a
-        >
-        <a
-          href="mailto:zackfelcyn@icloud.com"
-          class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md"
-          >Email Me</a
-        >
-        <a
-          href="references/resume.pdf"
-          class="bg-yellow-500 hover:bg-yellow-600 text-black py-2 px-4 rounded-lg shadow-md"
-          target="_blank"
-          >Resume</a
-        >
-      </div>
+  <body>
+    <div class="container">
+      <header class="top-bar">
+        <div class="logo">zachary <strong>FELCYN</strong></div>
+        <nav>
+          <a href="https://github.com/zfelcyn" target="_blank">GITHUB</a>
+          <a href="references/resume.pdf" target="_blank">RESUME</a>
+          <a href="mailto:zackfelcyn@icloud.com">EMAIL</a>
+        </nav>
+      </header>
+
+      <main class="grid">
+        <section class="intro">
+          <h2>
+            Washington State University <br />Studying
+            <strong>Computer Science</strong>
+          </h2>
+        </section>
+
+        <section class="profile-pic">
+          <img
+            src="references/profile.jpg"
+            alt="Profile"
+            class="cool-portrait"
+          />
+        </section>
+
+        <section class="feature">
+          <h3>Fotografia</h3>
+          <img src="references/thompson.png" alt="Thompson Flats" />
+        </section>
+
+        <section class="bio">
+          <p>Intern at D3 a Symetri Company.</p>
+        </section>
+
+        <section class="contact">
+          <h3>Want to connect on LinkedIn?</h3>
+          <p><strong>Let's grab a coffee and chat</strong></p>
+          <div class="socials">
+            <a
+              href="https://www.linkedin.com/in/zachary-felcyn-576292235/"
+              target="_blank"
+              >LINKEDIN</a
+            >
+          </div>
+        </section>
+
+        <aside class="projects">
+          <div>
+            <a
+              href="https://github.com/martinhundrup/315-course-project"
+              target="_blank"
+              >COVID ML Project</a
+            >
+          </div>
+          <div>
+            <a
+              href="https://college-hill-parking.github.io/index.html#"
+              target="_blank"
+              >College Hill Parking</a
+            >
+          </div>
+          <div>
+            <a
+              href="https://github.com/zfelcyn/Resident-Inventory-Tracker"
+              target="_blank"
+              >Resident Item Tracker</a
+            >
+          </div>
+          <div>
+            <a
+              href="https://github.com/zfelcyn/BinaryDecisionDiagram"
+              target="_blank"
+              >Binary Decision Diagram</a
+            >
+          </div>
+        </aside>
+      </main>
+      <footer class="site-footer">
+        <div class="footer-content">
+          <p>© 2025 Zachary Felcyn. All Rights Reserved.</p>
+          <p>
+            Design inspired by
+            <a
+              href="https://www.figma.com/community/file/1454733232397070322/portfolio-design-bento"
+              target="_blank"
+            >
+              Bento Portfolio – Figma Community
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
-    <footer class="mt-8 text-gray-300">
-      <p>&copy; 2025 Zachary Felcyn. All rights reserved.</p>
-    </footer>
   </body>
 </html>
