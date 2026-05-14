@@ -25,7 +25,7 @@
       <main class="grid">
         <section class="intro">
           <h2>
-            Washington State University <br />Studying
+            Washington State University <br />Graduate in
             <strong>Computer Science</strong>
           </h2>
         </section>
@@ -46,7 +46,7 @@
         </a>
 
         <section class="bio">
-          <p>Intern at D3 a Symetri Company.</p>
+          <p>Applications Developer at Symetri USA.</p>
         </section>
 
         <section class="contact">
@@ -94,7 +94,7 @@
       </main>
       <footer class="site-footer">
         <div class="footer-content">
-          <p>© 2025 Zachary Felcyn. All Rights Reserved.</p>
+          <p>© <span id="current-year">2026</span> Zachary Felcyn. All Rights Reserved.</p>
           <p>
             Design inspired by
             <a
@@ -107,5 +107,8 @@
         </div>
       </footer>
     </div>
+    <script>
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

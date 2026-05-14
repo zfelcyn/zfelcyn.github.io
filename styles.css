@@ -19,7 +19,8 @@ body {
 }
 
 .top-bar {
-  background: #D6CCBA;
+  background: #A6102D;
+  color: #f0f0e6;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +42,7 @@ body {
 }
 
 .top-bar nav a {
-  color: #1a1a1a;
+  color: #f0f0e6;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -49,7 +50,7 @@ body {
 }
 
 .top-bar nav a:hover {
-  color: #333;
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -66,7 +67,8 @@ body {
 }
 
 .intro {
-  background: #D6CCBA;
+  background: #4D4D4D;
+  color: #f0f0e6;
   grid-column: span 2;
 }
 
@@ -76,7 +78,7 @@ body {
 }
 
 .profile-pic {
-  background: #D6CCBA;
+  background: #4D4D4D;
   grid-column: span 1;
   display: flex;
   align-items: center;
@@ -98,7 +100,8 @@ body {
 }
 
 .feature {
-  background: #D6CCBA;
+  background: #4D4D4D;
+  color: #f0f0e6;
   grid-column: span 1;
 }
 
@@ -118,14 +121,15 @@ body {
 }
 
 .bio {
-  background: #D6CCBA;
+  background: #4D4D4D;
+  color: #f0f0e6;
   grid-column: span 1;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 .contact {
-  background: #656152;
+  background: #A6102D;
   color: #f0f0e6;
   grid-column: span 1;
 }
@@ -153,7 +157,8 @@ body {
 }
 
 .projects {
-  background: #D6CCBA;
+  background: #4D4D4D;
+  color: #f0f0e6;
   grid-column: span 1;
   display: flex;
   flex-direction: column;
@@ -171,7 +176,7 @@ body {
 }
 
 .projects div a {
-  color: #1a1a1a;
+  color: #f0f0e6;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -180,7 +185,7 @@ body {
 }
 
 .projects div a:hover {
-  color: #333;
+  color: #ffffff;
   text-decoration: underline;
   transform: translateX(2px);
 }
@@ -217,22 +222,22 @@ body {
 .site-footer {
   margin-top: 2rem;
   padding: 1.5rem;
-  background: #D6CCBA;
+  background: #A6102D;
   text-align: center;
   border-radius: 1rem;
   font-size: 0.85rem;
-  color: #1a1a1a;
+  color: #f0f0e6;
 }
 
 .site-footer a {
-  color: #1a1a1a;
+  color: #f0f0e6;
   font-weight: 600;
   text-decoration: underline;
   transition: color 0.2s ease-in-out;
 }
 
 .site-footer a:hover {
-  color: #333;
+  color: #ffffff;
 }
 
 .feature-link {
