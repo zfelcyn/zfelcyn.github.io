@@ -61,6 +61,13 @@ body {
   margin-top: 1.5rem;
 }
 
+.intro-link {
+  grid-column: span 2;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .intro, .profile-pic, .feature, .bio, .contact, .projects {
   border-radius: 1rem;
   padding: 1.5rem;
@@ -75,6 +82,7 @@ body {
   gap: 1rem;
   align-items: center;
   overflow: hidden;
+  height: 100%;
 }
 
 .intro h2 {
@@ -359,7 +367,7 @@ body {
     font-size: 1.35rem;
   }
 
-  .projects, .contact, .bio, .intro, .feature-link, .profile-pic {
+  .projects, .contact, .bio, .intro, .intro-link, .feature-link, .profile-pic {
     grid-column: span 1 !important;
   }
 
@@ -441,6 +449,7 @@ body {
   display: block;
 }
 
+.intro-link:hover .intro,
 .feature-link:hover .feature {
   transform: scale(1.01);
   transition: transform 0.2s ease-in-out;
