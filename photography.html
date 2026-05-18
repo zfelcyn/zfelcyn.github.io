@@ -33,6 +33,154 @@
         transform: scale(1.02);
       }
 
+      .photo-trigger {
+        position: relative;
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: zoom-in;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .photo-trigger img {
+        display: block;
+      }
+
+      .photo-icon {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 2.2rem;
+        height: 2.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: rgba(16, 16, 11, 0.72);
+        color: #f0f0e6;
+        font-size: 1.1rem;
+        line-height: 1;
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
+      }
+
+      .photo-trigger::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(16, 16, 11, 0.22),
+          rgba(16, 16, 11, 0)
+        );
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+      }
+
+      .photo-trigger:hover::after,
+      .photo-trigger:hover .photo-icon,
+      .photo-trigger:focus-visible::after,
+      .photo-trigger:focus-visible .photo-icon {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .photo-trigger:focus-visible {
+        outline: 2px solid #f0f0e6;
+        outline-offset: 4px;
+      }
+
+      .lightbox[hidden] {
+        display: none;
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 5.5rem;
+        background: rgba(6, 6, 6, 0.82);
+        backdrop-filter: blur(6px);
+      }
+
+      .lightbox-figure {
+        margin: 0;
+        max-width: min(100%, 1100px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+      }
+
+      .lightbox-image {
+        width: auto;
+        max-width: 100%;
+        max-height: 78vh;
+        border-radius: 16px;
+        object-fit: contain;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      .lightbox-caption {
+        color: #f0f0e6;
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+      }
+
+      .lightbox-close,
+      .lightbox-nav {
+        position: absolute;
+        border: none;
+        background: rgba(240, 240, 230, 0.12);
+        color: #f0f0e6;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      .lightbox-close:hover {
+        background: rgba(240, 240, 230, 0.2);
+        transform: scale(1.03);
+      }
+
+      .lightbox-nav:hover {
+        background: rgba(240, 240, 230, 0.2);
+        transform: translateY(-50%) scale(1.03);
+      }
+
+      .lightbox-close {
+        top: 1.25rem;
+        right: 1.25rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 999px;
+        font-size: 1.5rem;
+      }
+
+      .lightbox-nav {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 999px;
+        font-size: 1.85rem;
+      }
+
+      .lightbox-prev {
+        left: 1.25rem;
+      }
+
+      .lightbox-next {
+        right: 1.25rem;
+      }
+
       .photo-title {
         margin-top: 2rem;
         color: #d6cbba;
@@ -49,6 +197,44 @@
         .photo-title {
           margin-top: 1.25rem;
           font-size: 1.45rem;
+        }
+
+        .photo-icon {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .lightbox {
+          padding: 1rem;
+        }
+
+        .lightbox-close {
+          top: 0.85rem;
+          right: 0.85rem;
+        }
+
+        .lightbox-nav {
+          top: auto;
+          bottom: 1rem;
+          transform: none;
+          width: 3rem;
+          height: 3rem;
+        }
+
+        .lightbox-prev {
+          left: calc(50% - 3.5rem);
+        }
+
+        .lightbox-next {
+          right: calc(50% - 3.5rem);
+        }
+
+        .lightbox-image {
+          max-height: 72vh;
+        }
+
+        .lightbox-nav:hover {
+          transform: scale(1.03);
         }
       }
     </style>
@@ -84,5 +270,122 @@
         </div>
       </main>
     </div>
+    <div class="lightbox" hidden role="dialog" aria-modal="true">
+      <button
+        type="button"
+        class="lightbox-close"
+        aria-label="Close photo viewer"
+      >
+        ×
+      </button>
+      <button
+        type="button"
+        class="lightbox-nav lightbox-prev"
+        aria-label="Previous photo"
+      >
+        ‹
+      </button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-image" alt="" />
+        <figcaption class="lightbox-caption"></figcaption>
+      </figure>
+      <button
+        type="button"
+        class="lightbox-nav lightbox-next"
+        aria-label="Next photo"
+      >
+        ›
+      </button>
+    </div>
+    <script>
+      const galleryImages = Array.from(document.querySelectorAll(".photo-gallery img"));
+      const lightbox = document.querySelector(".lightbox");
+      const lightboxImage = document.querySelector(".lightbox-image");
+      const lightboxCaption = document.querySelector(".lightbox-caption");
+      const closeButton = document.querySelector(".lightbox-close");
+      const prevButton = document.querySelector(".lightbox-prev");
+      const nextButton = document.querySelector(".lightbox-next");
+      const imageData = galleryImages.map((image) => ({
+        src: image.currentSrc || image.src,
+        alt: image.alt,
+      }));
+      let currentIndex = 0;
+      let lastTrigger = null;
+
+      function updateLightbox(index) {
+        const item = imageData[index];
+        currentIndex = index;
+        lightboxImage.src = item.src;
+        lightboxImage.alt = item.alt;
+        lightboxCaption.textContent = item.alt;
+      }
+
+      function openLightbox(index, trigger) {
+        updateLightbox(index);
+        lastTrigger = trigger;
+        lightbox.hidden = false;
+        document.body.style.overflow = "hidden";
+        closeButton.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.hidden = true;
+        document.body.style.overflow = "";
+        if (lastTrigger) {
+          lastTrigger.focus();
+        }
+      }
+
+      function showNext(step) {
+        const nextIndex = (currentIndex + step + imageData.length) % imageData.length;
+        updateLightbox(nextIndex);
+      }
+
+      galleryImages.forEach((image, index) => {
+        const trigger = document.createElement("button");
+        const icon = document.createElement("span");
+
+        trigger.type = "button";
+        trigger.className = "photo-trigger";
+        trigger.setAttribute("aria-label", `Open ${image.alt}`);
+        image.parentNode.insertBefore(trigger, image);
+        trigger.appendChild(image);
+
+        icon.className = "photo-icon";
+        icon.setAttribute("aria-hidden", "true");
+        icon.textContent = "+";
+        trigger.appendChild(icon);
+
+        trigger.addEventListener("click", () => openLightbox(index, trigger));
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+      prevButton.addEventListener("click", () => showNext(-1));
+      nextButton.addEventListener("click", () => showNext(1));
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (lightbox.hidden) {
+          return;
+        }
+
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+
+        if (event.key === "ArrowLeft") {
+          showNext(-1);
+        }
+
+        if (event.key === "ArrowRight") {
+          showNext(1);
+        }
+      });
+    </script>
   </body>
 </html>
