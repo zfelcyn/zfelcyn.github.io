@@ -176,11 +176,52 @@ body {
 }
 
 .bio {
-  background: #4D4D4D;
+  background: linear-gradient(155deg, #45433d 0%, #34322c 100%);
   color: #f0f0e6;
   grid-column: span 1;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.bio::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -48px;
+  bottom: -72px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(166, 16, 45, 0.34) 0%, rgba(166, 16, 45, 0) 72%);
+}
+
+.bio > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bio-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 230, 0.68);
+}
+
+.bio h3 {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+.bio-company {
+  font-size: 1rem;
+  color: rgba(240, 240, 230, 0.86);
+  font-weight: 500;
 }
 
 .contact {
