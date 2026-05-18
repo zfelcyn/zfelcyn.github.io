@@ -367,6 +367,17 @@ body {
     max-width: 100%;
   }
 
+  .cool-portrait {
+    width: min(100%, 260px);
+  }
+
+  .feature img {
+    display: block;
+    width: min(100%, 300px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .intro {
     grid-template-columns: 1fr;
     gap: 1.25rem;
